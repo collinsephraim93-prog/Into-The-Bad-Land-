@@ -1,0 +1,244 @@
+﻿
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MyRPGGame — Official Site</title>
+  <meta name="description" content="Official site for MyRPGGame — an indie RPG/adventure game made with LibGDX." />
+
+  <!-- Simple modern-looking styles -->
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa7bd;
+      --accent: #6ee7b7;
+      --accent-2: #7dd3fc;
+      --glass: rgba(255,255,255,0.03);
+      color-scheme: dark;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    [data-theme="light"]{
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --muted: #4b5563;
+      --accent: #0ea5a4;
+      --accent-2: #0ea5ff;
+      --glass: rgba(10,20,30,0.03);
+      color-scheme: light;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071028 0%, var(--bg) 100%);color: #e6eef6;}
+    .container{max-width:1100px;margin:0 auto;padding:28px;}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 6px 18px rgba(2,6,23,0.6);
+      font-family:monospace;
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent-2)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin:28px 0}
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:2.1rem;line-height:1.02}
+    p.lead{color:var(--muted);margin-top:10px}
+
+    .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#002;font-weight:700;padding:10px 16px;border-radius:10px;cursor:pointer;
+      text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+    .small{font-size:0.9rem;padding:8px 12px;border-radius:8px}
+
+    /* Screenshots / gallery */
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .screenshot{background:var(--glass);height:160px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+
+    /* iframe preview */
+    .preview{height:400px;border-radius:10px;overflow:hidden}
+    .preview iframe{width:100%;height:100%;border:0}
+
+    /* features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+    .feature{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .feature h3{margin:0 0 6px 0}
+
+    footer{margin:40px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:10px;color:var(--muted);cursor:pointer}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+      .features{grid-template-columns:1fr}
+      .preview{height:260px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">RPG</div>
+        <div>
+          <div style="font-weight:800">MyRPGGame</div>
+          <small style="color:var(--muted)">A tiny indie adventure</small>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#play">Play</a>
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#contact">Contact</a>
+        <button id="themeBtn" class="theme-toggle" title="Toggle light/dark">Toggle theme</button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero">
+      <section>
+        <div class="card">
+          <h1>Explore a handcrafted pixel world, fight monsters, and solve mysteries</h1>
+          <p class="lead">An RPG/adventure made with LibGDX — playable on web, desktop, and mobile. Build your character, complete quests, and uncover secrets in the land of Asteria.</p>
+
+          <div class="cta">
+            <!-- Replace # with your real links -->
+            <a id="playWeb" class="btn" href="#play" role="button">▶ Play Web Demo</a>
+            <a id="downloadBtn" class="btn secondary small" href="#" role="button">⬇ Download (Desktop)</a>
+            <a class="btn secondary small" href="#" role="button">📱 Android APK</a>
+          </div>
+
+          <div style="margin-top:16px;color:var(--muted);font-size:0.9rem">
+            <strong>Tip:</strong> To host your HTML5 LibGDX build, upload the generated `html` folder to GitHub Pages, Netlify, or any static host.
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div id="features" class="features" style="margin-top:18px">
+          <div class="feature card">
+            <h3>Open World</h3>
+            <p style="color:var(--muted)">Tile maps, NPCs, and exploration built with Tiled & LibGDX.</p>
+          </div>
+          <div class="feature card">
+            <h3>Inventory & Quests</h3>
+            <p style="color:var(--muted)">Pick up items, track quests, and upgrade gear.</p>
+          </div>
+          <div class="feature card">
+            <h3>Cross-platform</h3>
+            <p style="color:var(--muted)">Desktop, Android, iOS, and Web (HTML5) builds from the same codebase.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right column: preview -->
+      <aside>
+        <div class="card preview">
+          <!-- Replace the src with your exported LibGDX HTML build (index.html inside the html folder) -->
+          <iframe id="gameFrame" src="about:blank" title="Game preview">
+            <!-- If the user's browser blocks iframes, show this text -->
+            Your browser doesn't support iframes — open the Web build in a new tab.
+          </iframe>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+          <a class="btn small" href="#screenshots">View screenshots</a>
+          <a class="btn secondary small" href="#contact">Contact</a>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Screenshots -->
+    <section id="screenshots" style="margin-top:24px">
+      <h2 style="margin-bottom:12px">Screenshots</h2>
+      <div class="gallery">
+        <!-- Replace these divs with <img src="path/to/screenshot.png"> when you have images -->
+        <div class="screenshot">Screenshot 1</div>
+        <div class="screenshot">Screenshot 2</div>
+        <div class="screenshot">Screenshot 3</div>
+        <div class="screenshot">Screenshot 4</div>
+      </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact">
+      <div>
+        <h3 style="margin:0 0 6px 0">Get in touch</h3>
+        <p style="margin:0;color:var(--muted)">Questions, bug reports, or collabs — send an email.</p>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <!-- mailto fallback for simple contact -->
+        <a class="btn secondary small" href="mailto:collinsephraim93@gmail.com?subject=MyRPGGame%20Inquiry">Email</a>
+        <a class="btn small" href="#" id="githubLink">GitHub</a>
+      </div>
+    </footer>
+
+    <div style="text-align:center;color:var(--muted);font-size:0.85rem;margin-top:14px">
+      © <span id="year"></span> MyRPGGame — Built with ❤️ and LibGDX
+    </div>
+  </div>
+
+  <!-- Basic interactivity -->
+  <script>
+    // 1) Theme toggle (stores choice in localStorage)
+    const themeBtn = document.getElementById('themeBtn');
+    const root = document.documentElement;
+
+    function applyTheme(theme){
+      if(theme === 'light') root.setAttribute('data-theme','light');
+      else root.removeAttribute('data-theme');
+    }
+
+    const stored = localStorage.getItem('site-theme') || 'dark';
+    applyTheme(stored);
+
+    themeBtn.addEventListener('click', ()=>{
+      const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      const next = current === 'light' ? 'dark' : 'light';
+      localStorage.setItem('site-theme', next);
+      applyTheme(next);
+    });
+
+    // 2) Set year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 3) Preview iframe: when user clicks "Play Web Demo" we set iframe src
+    const playWeb = document.getElementById('playWeb');
+    const gameFrame = document.getElementById('gameFrame');
+
+    // Example: if you host your LibGDX html build at /game/index.html, use that URL.
+    // For now we'll load a lightweight placeholder page so the iframe isn't blank.
+    const placeholder = 'data:text/html;charset=utf-8,' + encodeURIComponent(
+`<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#020614;color:#9fb7c9;font-family:sans-serif}h1{font-size:22px}p{color:#8aa}</style></head><body><div><h1>Web Build Placeholder</h1><p>Replace this iframe src with your exported LibGDX HTML build's index.html</p></div></body></html>`
+    );
+
+    // Default iframe content
+    gameFrame.src = placeholder;
+
+    playWeb.addEventListener('click', (e)=>{
+      e.preventDefault();
+      // Replace '#' below with the URL/path of your exported html/index.html
+      const yourHtmlBuildPath = './html/myRPG.html'; // EDIT THIS
+      // If you don't have a build yet, we show the placeholder.
+      // Attempt to load the real build; if unavailable, user can open it in a new tab.
+      fetch(yourHtmlBuildPath, {method:'HEAD'}).then(r=>{
+        if(r.ok) gameFrame.src = yourHtmlBuildPath;
+        else gameFrame.src = placeholder;
+      }).catch(()=> gameFrame.src = placeholder);
+      // Smooth scroll to preview
+      gameFrame.scrollIntoView({behavior:'smooth'});
+    });
+
+    // GitHub link placeholder - replace with your project repo
+    document.getElementById('githubLink').href = '#'; // e.g. 'https://github.com/yourname/MyRPGGame'
+  </script>
+</body>
+</html>
